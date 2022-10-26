@@ -5,12 +5,11 @@ import { AppError } from "./errors/appError";
 
 const app = express();
 
+app.use(express.json());
+
 app.use(cors());
 
 app.use(router);
-
-app.listen(process.env.PORT || 4000);
-console.log("Online");
 
 app.use((err: Error, request: Request, response: Response, _: NextFunction) => {
   if (err instanceof AppError) {
@@ -25,5 +24,9 @@ app.use((err: Error, request: Request, response: Response, _: NextFunction) => {
     message: "Internal server error",
   });
 });
+
+app.listen(process.env.PORT || 4000);
+console.log("Online");
+
 
 export default app;
