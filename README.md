@@ -1,6 +1,7 @@
 # Observações sobre o projeto:
 
 > ### Este projeto foi desenvolvido com [yarn](https://yarnpkg.com/getting-started/usage) então ao iniciar o projeto digite no terminal:
+---
 
     Criando node-modules: yarn
 
