@@ -1,5 +1,16 @@
-# Observações sobre o projeto:
+# Motor shop
 
+>### `Tecnologias utilizadas:`
+    "@prisma/client": "^4.5.0",
+    "@types/cors": "^2.8.12",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^8.5.1",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.8.4"
+    "prisma": "^4.4.0"
 > ### Este projeto foi desenvolvido com [yarn](https://yarnpkg.com/getting-started/usage) então ao iniciar o projeto digite no terminal:
 ---
 

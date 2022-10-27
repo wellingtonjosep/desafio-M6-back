@@ -39,7 +39,6 @@ const userCreateController = async (req: Request, res: Response) => {
     });
     return res.status(201).json(response)
   } catch (err) {
-    console.log(err)
     if (err instanceof Error) {
       handleError(err, res);
     }

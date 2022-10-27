@@ -3,7 +3,7 @@ CREATE TABLE "users" (
     "id" TEXT NOT NULL,
     "name" TEXT NOT NULL,
     "email" TEXT NOT NULL,
-    "cpf" INTEGER NOT NULL,
+    "cpf" TEXT NOT NULL,
     "phone" TEXT NOT NULL,
     "birthDate" TEXT NOT NULL,
     "description" TEXT NOT NULL,
@@ -18,11 +18,12 @@ CREATE TABLE "vehicles" (
     "title" TEXT NOT NULL,
     "typeVehicle" TEXT NOT NULL,
     "description" TEXT NOT NULL,
-    "year" TEXT NOT NULL,
-    "mileage" TEXT NOT NULL,
+    "year" INTEGER NOT NULL,
+    "mileage" INTEGER NOT NULL,
     "price" INTEGER NOT NULL,
     "userId" TEXT NOT NULL,
-    "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP
+    "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "is_active" BOOLEAN NOT NULL DEFAULT true
 );
 
 -- CreateTable

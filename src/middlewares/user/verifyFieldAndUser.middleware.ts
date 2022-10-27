@@ -104,13 +104,11 @@ const verifyFieldAndUserMiddleware = async (
 
   // verificando opções de tipos de usuario
 
-  if (typeUser != "buyer") {
-    if (typeUser != "advertiser") {
-      return res.status(400).json({
-        name: "typeUser error",
-        message: `the ${typeUser} user type cannot be registered`
-      })
-    }
+  if (typeUser != "buyer" && typeUser != "advertiser") {
+    return res.status(400).json({
+      name: "typeUser error",
+      message: `the ${typeUser} user type cannot be registered`,
+    });
   }
 
   next();

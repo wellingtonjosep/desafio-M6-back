@@ -33,11 +33,12 @@ model Vehicle {
   title       String
   typeVehicle String
   description String
-  year        String
-  mileage     String
+  year        Int
+  mileage     Int
   price       Int
   userId      String
   created_at  DateTime @default(now())
+  is_active   Boolean  @default(true)
   images      Image[]
   user        User @relation(fields: [userId], references: [id], onDelete: Cascade)
   comments    Comment[]
