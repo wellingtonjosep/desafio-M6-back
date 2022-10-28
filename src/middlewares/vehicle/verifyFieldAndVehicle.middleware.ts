@@ -1,3 +1,4 @@
+import { objectEnumValues } from "@prisma/client/runtime";
 import { NextFunction, Request, Response } from "express";
 import prisma from "../../database";
 
@@ -58,9 +59,18 @@ const verifyFieldAndVehicleMiddleware = async (
     errorType.push({ price: "Required field" });
   }
 
+  images.forEach((element: {image: ""}) => {
+    if (typeof element != "object") {
+      errorType.push({ image: "Error type image" });
+    } else if (!element.image) {
+      errorType.push({ image: "Image object not found at images" });
+    }
+  });
+  
   if (errorType.length > 0) {
     return res.status(400).json(errorType);
   }
+  
 
   // verificando os tipos de veiculo
 

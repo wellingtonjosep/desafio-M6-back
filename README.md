@@ -75,20 +75,33 @@
         "description": "antigo ao 2002",
         "year": 2002,
         "mileage": 200000,
-        "price": 10000
+        "price": 10000,
+        "images": [{"image": "test"},{"image": "test"}]
     }
 
     Recebido: {
-        "id": "ff5edecb-c936-4328-b6ee-ea673bdb9687",
+        "id": "c2b3ae75-7758-4c80-ba10-62563130fe37",
         "title": "toyota etios",
         "typeVehicle": "car",
         "description": "antigo ao 2002",
         "year": 2002,
         "mileage": 200000,
         "price": 10000,
-        "userId": "10802531-ae04-40d1-a29a-28aee0fafc3d",
-        "created_at": "2022-10-28T15:15:14.206Z",
-        "is_active": true
+        "userId": "e38df17d-930f-4b59-b3db-a45356b5fbbf",
+        "created_at": "2022-10-28T16:34:01.226Z",
+        "is_active": true,
+        "images": [
+            {
+                "id": "018c31dd-9a74-465e-9e24-091543be4e6c",
+                "image": "olu",
+                "vehicleId": "c2b3ae75-7758-4c80-ba10-62563130fe37"
+            },
+            {
+                "id": "d6d79036-62f7-433d-aba3-eae55026e02d",
+                "image": "ola",
+                "vehicleId": "c2b3ae75-7758-4c80-ba10-62563130fe37"
+            }
+        ]
     }
 
 > ### Lembrando que você não pode criar um usuario com os tipos diferentes de `buyer` ou `advertiser`

@@ -7,6 +7,7 @@ const vehicleCreateService = async ({
   typeVehicle,
   description,
   year,
+  images,
   mileage,
   price,
 }: IVehicle) => {
@@ -19,7 +20,15 @@ const vehicleCreateService = async ({
       mileage,
       price,
       userId: id,
+      images: {
+        createMany: {
+          data: images
+        }
+      }
     },
+    include: {
+      images: true
+    }
   });
 
   return vehicle
