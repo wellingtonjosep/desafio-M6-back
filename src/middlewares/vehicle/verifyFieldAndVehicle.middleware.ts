@@ -1,3 +1,4 @@
+import { objectEnumValues } from "@prisma/client/runtime";
 import { NextFunction, Request, Response } from "express";
 import prisma from "../../database";
 
@@ -6,7 +7,8 @@ const verifyFieldAndVehicleMiddleware = async (
   res: Response,
   next: NextFunction
 ) => {
-  const { title, typeVehicle, description, year, mileage, price } = req.body;
+  const { title, typeVehicle, images, description, year, mileage, price } =
+    req.body;
 
   const { userId } = req.params;
 
@@ -41,6 +43,10 @@ const verifyFieldAndVehicleMiddleware = async (
     errorType.push({ description: "Required field" });
   }
 
+  if (typeof images != "object" || !images || images.length === 0) {
+    errorType.push({ images: "Required field" });
+  }
+
   if (typeof year != "number" || !year) {
     errorType.push({ year: "Required field" });
   }
@@ -53,9 +59,18 @@ const verifyFieldAndVehicleMiddleware = async (
     errorType.push({ price: "Required field" });
   }
 
+  images.forEach((element: {image: ""}) => {
+    if (typeof element != "object") {
+      errorType.push({ image: "Error type image" });
+    } else if (!element.image) {
+      errorType.push({ image: "Image object not found at images" });
+    }
+  });
+  
   if (errorType.length > 0) {
     return res.status(400).json(errorType);
   }
+  
 
   // verificando os tipos de veiculo
 
