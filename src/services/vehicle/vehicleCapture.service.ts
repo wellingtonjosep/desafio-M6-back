@@ -17,6 +17,9 @@ const vehicleCaptureService = async (userId: string) => {
     const vehicles = await prisma.vehicle.findMany({
         where: {
             user: user
+        },
+        include: {
+            images: true
         }
     })
 

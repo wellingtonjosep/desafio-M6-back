@@ -6,4 +6,5 @@ export interface IVehicle {
     year: number;
     mileage: number;
     price: number;
+    images: [];
 }

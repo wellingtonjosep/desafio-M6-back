@@ -6,7 +6,8 @@ const verifyFieldAndVehicleMiddleware = async (
   res: Response,
   next: NextFunction
 ) => {
-  const { title, typeVehicle, description, year, mileage, price } = req.body;
+  const { title, typeVehicle, images, description, year, mileage, price } =
+    req.body;
 
   const { userId } = req.params;
 
@@ -39,6 +40,10 @@ const verifyFieldAndVehicleMiddleware = async (
 
   if (typeof description != "string" || !description) {
     errorType.push({ description: "Required field" });
+  }
+
+  if (typeof images != "object" || !images || images.length === 0) {
+    errorType.push({ images: "Required field" });
   }
 
   if (typeof year != "number" || !year) {
