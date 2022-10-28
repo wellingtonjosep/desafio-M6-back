@@ -66,6 +66,31 @@
 
 ---
 
+    Method POST
+    Rota: /vehicles/:userId
+
+    Enviado: {
+        "title": "toyota etios",
+        "typeVehicle": "car",
+        "description": "antigo ao 2002",
+        "year": 2002,
+        "mileage": 200000,
+        "price": 10000
+    }
+
+    Recebido: {
+        "id": "ff5edecb-c936-4328-b6ee-ea673bdb9687",
+        "title": "toyota etios",
+        "typeVehicle": "car",
+        "description": "antigo ao 2002",
+        "year": 2002,
+        "mileage": 200000,
+        "price": 10000,
+        "userId": "10802531-ae04-40d1-a29a-28aee0fafc3d",
+        "created_at": "2022-10-28T15:15:14.206Z",
+        "is_active": true
+    }
+
 > ### Lembrando que você não pode criar um usuario com os tipos diferentes de `buyer` ou `advertiser`
 
 > ### Ao iniciar o projeto com yarn dev o link de acesso a API sera `localhost:4000`
