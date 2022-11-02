@@ -2,7 +2,6 @@
 
 >### `Tecnologias utilizadas:`
     "@prisma/client": "^4.5.0",
-    "@types/cors": "^2.8.12",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "express": "^4.18.2",
@@ -93,12 +92,12 @@
         "images": [
             {
                 "id": "018c31dd-9a74-465e-9e24-091543be4e6c",
-                "image": "olu",
+                "image": "test",
                 "vehicleId": "c2b3ae75-7758-4c80-ba10-62563130fe37"
             },
             {
                 "id": "d6d79036-62f7-433d-aba3-eae55026e02d",
-                "image": "ola",
+                "image": "test",
                 "vehicleId": "c2b3ae75-7758-4c80-ba10-62563130fe37"
             }
         ]

@@ -5,9 +5,9 @@ import vehicleCaptureService from "../../services/vehicle/vehicleCapture.service
 
 const vehicleCaptureController = async (req: Request, res: Response) => {
     try {
-        const { userId } = req.params
+        const { vehicleId } = req.params
 
-        const response = await vehicleCaptureService(userId)
+        const response = await vehicleCaptureService(vehicleId)
 
         return res.json(response)
     } catch (err) {
