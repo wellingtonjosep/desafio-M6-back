@@ -1,6 +1,7 @@
 import { Router } from "express";
 
 import userCreateController from "../controllers/user/userCreate.controller";
+import userCaptureController from "../controllers/user/userCapture.controller";
 
 import vehicleCaptureUserController from "../controllers/vehicle/vehicleCaptureUser.controller";
 import vehicleCaptureAllController from "../controllers/vehicle/vehicleCaptureAll.controller";
@@ -12,6 +13,7 @@ import verifyFieldAndVehicleMiddleware from "../middlewares/vehicle/verifyFieldA
 
 const router = Router();
 
+router.get("/users/:userId", userCaptureController)
 router.post("/users", verifyFieldAndUserMiddleware, userCreateController);
 
 router.get("/vehicles", vehicleCaptureAllController);
