@@ -2,7 +2,6 @@
 
 >### `Tecnologias utilizadas:`
     "@prisma/client": "^4.5.0",
-    "@types/cors": "^2.8.12",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "express": "^4.18.2",

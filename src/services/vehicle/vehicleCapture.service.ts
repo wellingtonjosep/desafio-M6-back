@@ -2,28 +2,19 @@ import prisma from "../../database"
 import { AppError } from "../../errors/appError"
 
 
-const vehicleCaptureService = async (userId: string) => {
+const vehicleCaptureService = async (vehicleId: string) => {
 
-    const user = await prisma.user.findUnique({
+    const vehicle = await prisma.vehicle.findUnique({
         where: {
-            id: userId
+            id: vehicleId
         }
     })
 
-    if (!user) {
-        throw new AppError(404, "User not found")
+    if (!vehicle) {
+        throw new AppError(404, "Vehicle not found")
     }
 
-    const vehicles = await prisma.vehicle.findMany({
-        where: {
-            user: user
-        },
-        include: {
-            images: true
-        }
-    })
-
-    return vehicles
+    return vehicle
 }
 
 export default vehicleCaptureService
