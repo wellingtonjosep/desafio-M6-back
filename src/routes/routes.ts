@@ -10,11 +10,13 @@ import vehicleCreateController from "../controllers/vehicle/vehicleCreate.contro
 
 import verifyFieldAndUserMiddleware from "../middlewares/user/verifyFieldAndUser.middleware";
 import verifyFieldAndVehicleMiddleware from "../middlewares/vehicle/verifyFieldAndVehicle.middleware";
+import userLoginController from "../controllers/user/userLogin.controller";
 
 const router = Router();
 
 router.get("/users/:userId", userCaptureController)
 router.post("/users", verifyFieldAndUserMiddleware, userCreateController);
+router.post("/users/login", userLoginController)
 
 router.get("/vehicles", vehicleCaptureAllController);
 router.get("/vehicles/:vehicleId", vehicleCaptureController)
