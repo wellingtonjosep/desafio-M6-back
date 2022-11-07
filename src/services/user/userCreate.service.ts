@@ -3,7 +3,7 @@ import { IUser } from "../../interfaces/user";
 import bcrypt from "bcryptjs"
 
 
-export default async function userCreateService({name, email, cpf, phone, birthDate, description, typeUser, password, cep, state, city, road, numberHouse, complement }: IUser) {
+const userCreateService = async ({name, email, cpf, phone, birthDate, description, typeUser, password, cep, state, city, road, numberHouse, complement }: IUser) => {
     const userCreate = await prisma.user.create({
         data: {
             name,
@@ -32,3 +32,5 @@ export default async function userCreateService({name, email, cpf, phone, birthD
 
     return {...userCreate, password: undefined, adresse: adresse}
 }
+
+export default userCreateService
