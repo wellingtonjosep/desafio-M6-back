@@ -35,6 +35,8 @@ const verifyUserIdMiddleware = async (
         statusCode: 403,
       });
   }
+
+  next()
 };
 
 export default verifyUserIdMiddleware;
